@@ -20,7 +20,7 @@ shell.prompt();
 shell.on('line', question => {
   exec(`wall ${question}`, (error, stdout, stderr) => {
     const thisuser = stdout.split('\n');
-    console.log(thisuser);
+    // console.log(thisuser);
     shell.setPrompt(`#${username} > `);
     shell.prompt();
   });
