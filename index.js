@@ -13,13 +13,19 @@ const shell = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
   terminal: true,
-  prompt: `${username} > `
 });
 
+function setPrompt() {
+  shell.setPrompt(`#${username} > `);
+  shell.prompt();
+}
+
+setPrompt();
 shell.on('line', question => {
   exec(`wall ${question}`, (error, stdout, stderr) => {
     const thisuser = stdout.split('\n');
     // console.log(thisuser);
+    setPrompt();
   });
 }).on('pause', () => {
 }).on('resume', () => {
