@@ -1,0 +1,19 @@
+{
+  "name": "maxtrader",
+  "version": "0.0.1",
+  "description": "MaxTrader Wall App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indraai/MaxTrader.git"
+  },
+  "author": "Quinn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indraai/MaxTrader/issues"
+  },
+  "homepage": "https://github.com/indraai/MaxTrader#readme"
+}
