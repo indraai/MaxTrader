@@ -19,7 +19,9 @@ shell.prompt();
 
 shell.on('line', question => {
   exec(`wall ${question}`, (error, stdout, stderr) => {
-    console.log(`#${username} > ${stdout}`);
+    console.log(`${stdout}`);
+    shell.setPrompt(`#${username} > `);
+    shell.prompt();
   });
 }).on('pause', () => {
 }).on('resume', () => {
