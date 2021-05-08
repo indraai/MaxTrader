@@ -19,7 +19,8 @@ shell.prompt();
 
 shell.on('line', question => {
   exec(`wall ${question}`, (error, stdout, stderr) => {
-    console.log(`${stdout}`);
+    const thisuser = stdout.split('\r');
+    console.log(`${thisuser}`);
     shell.setPrompt(`#${username} > `);
     shell.prompt();
   });
