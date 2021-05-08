@@ -11,7 +11,8 @@ const { username } = require("os").userInfo()
 
 const shell = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
+  terminal: true,
 });
 
 shell.setPrompt(`#${username} > `);
