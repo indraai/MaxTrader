@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const readline = require('readline');
-const {exec} = require('child_process');
+const { exec, spawn } = require('child_process');
 const { username } = require("os").userInfo()
 
 const shell = readline.createInterface({
@@ -22,7 +22,8 @@ function setPrompt() {
 
 setPrompt();
 shell.on('line', question => {
-  exec(`wall ${question}`, (error, stdout, stderr) => {
+  question = question.replace(/'/, '\'').replace(/"/, '\"');
+  exec(`wall "${question}"`, (error, stdout, stderr) => {
     const thisuser = stdout.split('\n');
     // console.log(thisuser);
     setPrompt();
